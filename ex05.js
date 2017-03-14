@@ -28,10 +28,10 @@ isEvenConcat(5);
 function isEvenConcat(nb) {
 
         if (nb % 2 === 0) {
-            return 'pair';
+            return "Le " + nb + " est pair";
         } 
         else {
-            return 'impair';
+            return "Le " + nb + " est impair";
         }
 }
 

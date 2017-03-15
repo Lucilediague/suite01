@@ -1,3 +1,4 @@
+"use strict";
 /*
     Ecrire une fonction "shoppingList",
     qui prend un paramètre un tableau de paniers;
@@ -46,7 +47,7 @@ shoppingList([
 
 //  écrire votre code sous ce commentaire
 
-function shoppingList(lists) {
+/* function shoppingList(lists) {
 
     let total = {"orange": 0, "kiwi": 0, "ananas": 0, "prune": 0, "banane": 0, "pamplemousse": 0};
 
@@ -81,12 +82,21 @@ function cart(list, total) {
         }
     }
     return total;
+} */
+
+function shoppingList(list) {
+    var fruitsList = {};
+    for (let i = 0; i < list.length; i++) {
+        for (let a = 0; a < list[i].length; a++) {
+            if (fruitsList.hasOwnProperty(list[i][a])) {
+                fruitsList[list[i][a]]++;
+            }
+            else {
+                fruitsList[list[i][a]] = 1;
+            }
+        }
+    }
+    console.log(fruitsList);
+    return fruitsList;
 }
 
-console.log(shoppingList([
-    ["orange", "orange", "kiwi", "ananas"],
-    ["kiwi", "ananas", "banane", "prune"],
-    ["orange", "orange", "orange", "orange"],
-    ["orange", "orange", "kiwi", "kiwi"],
-    ["prune", "banane", "pamplemousse", "ananas"]
-]))
